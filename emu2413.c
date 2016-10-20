@@ -1147,6 +1147,10 @@ calc_envelope (OPLL_SLOT * slot, int32_t lfo)
       slot->eg_mode = FINISH;
       egout = (1 << EG_BITS) - 1;
     }
+    if (slot->eg_mode == SUSTINE && slot->patch->EG == 1) {
+      slot->eg_mode = SUSHOLD;
+      UPDATE_EG (slot);
+    }
     break;
 
   case SETTLE:
