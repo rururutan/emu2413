@@ -1629,6 +1629,16 @@ OPLL_writeReg (OPLL * opll, uint32_t reg, uint32_t data)
   case 0x0f:
     break;
 
+  case 0x19:
+  case 0x1a:
+  case 0x1b:
+  case 0x1c:
+  case 0x1d:
+  case 0x1e:
+  case 0x1f:
+     reg -= 9;
+     // fall through
+
   case 0x10:
   case 0x11:
   case 0x12:
@@ -1643,6 +1653,16 @@ OPLL_writeReg (OPLL * opll, uint32_t reg, uint32_t data)
     UPDATE_ALL (MOD(opll,ch));
     UPDATE_ALL (CAR(opll,ch));
     break;
+
+  case 0x29:
+  case 0x2a:
+  case 0x2b:
+  case 0x2c:
+  case 0x2d:
+  case 0x2e:
+  case 0x2f:
+     reg -= 9;
+     // fall through
 
   case 0x20:
   case 0x21:
@@ -1666,6 +1686,16 @@ OPLL_writeReg (OPLL * opll, uint32_t reg, uint32_t data)
     update_key_status (opll);
     update_rhythm_mode (opll);
     break;
+
+  case 0x39:
+  case 0x3a:
+  case 0x3b:
+  case 0x3c:
+  case 0x3d:
+  case 0x3e:
+  case 0x3f:
+     reg -= 9;
+     // fall through
 
   case 0x30:
   case 0x31:
